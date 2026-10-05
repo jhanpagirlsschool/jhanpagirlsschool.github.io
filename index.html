@@ -116,6 +116,20 @@ footer{
   .slide-btn{width:38px;height:38px;font-size:22px}
 }
 </style>
+
+<style id="welcome-slideshow-style">
+.welcome-photo-section{width:100%;max-width:1100px;margin:20px auto;padding:0 15px;box-sizing:border-box}
+.welcome-slideshow{position:relative;width:100%;height:430px;overflow:hidden;border-radius:16px;background:#eaf5ed;box-shadow:0 5px 18px rgba(0,0,0,.15)}
+.welcome-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
+.welcome-slide.active{opacity:1}
+.welcome-prev,.welcome-next{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border:0;border-radius:50%;background:rgba(8,127,59,.88);color:#fff;font-size:31px;line-height:42px;cursor:pointer;z-index:5}
+.welcome-prev{left:12px}.welcome-next{right:12px}
+.welcome-dots{text-align:center;padding:11px 0}
+.welcome-dot{display:inline-block;width:11px;height:11px;margin:0 5px;border-radius:50%;background:#aaa;cursor:pointer}
+.welcome-dot.active{background:#d71920}
+@media(max-width:600px){.welcome-slideshow{height:240px}.welcome-prev,.welcome-next{width:38px;height:38px;font-size:25px}}
+</style>
+
 </head>
 
 <body>
@@ -146,7 +160,21 @@ footer{
 <section id="home" class="hero">
   <h2 id="motto">স্বাগতম</h2>
   <p>ঝাঁপা মাধ্যমিক আদর্শ বালিকা বিদ্যালয়ের অফিসিয়াল ওয়েবসাইটে আপনাকে স্বাগতম।</p>
-  <img src="school1.jpg" alt="ঝাঁপা মাধ্যমিক আদর্শ বালিকা বিদ্যালয়" class="welcome-photo" onerror="this.style.display='none'">
+
+  <div class="slideshow welcome-slider" id="welcomeSlider">
+    <div class="slide active"><img src="school1.jpg" alt="বিদ্যালয়ের ছবি ১"></div>
+    <div class="slide"><img src="school2.jpg" alt="বিদ্যালয়ের ছবি ২"></div>
+    <div class="slide"><img src="school3.jpg" alt="বিদ্যালয়ের ছবি ৩"></div>
+    <div class="slide"><img src="school4.jpg" alt="বিদ্যালয়ের ছবি ৪"></div>
+    <button class="slide-btn slide-prev" type="button" aria-label="আগের ছবি">‹</button>
+    <button class="slide-btn slide-next" type="button" aria-label="পরের ছবি">›</button>
+  </div>
+  <div class="dots" id="welcomeDots">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+    <span class="dot" data-index="2"></span>
+    <span class="dot" data-index="3"></span>
+  </div>
 </section>
 
 <section id="about" class="section">
@@ -461,6 +489,27 @@ async function loadWebsite(){
       }).join("");
     }
 
+    /* ---------- Welcome School Photos Slideshow ---------- */
+    {
+      const slider = document.getElementById("welcomeSlider");
+      const slides = [...slider.querySelectorAll(".slide")];
+      const dots = [...document.querySelectorAll("#welcomeDots .dot")];
+      let current = 0;
+
+      const showWelcomeSlide = (index) => {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((el, i) => el.classList.toggle("active", i === current));
+        dots.forEach((el, i) => el.classList.toggle("active", i === current));
+      };
+
+      slider.querySelector(".slide-prev").onclick = () => showWelcomeSlide(current - 1);
+      slider.querySelector(".slide-next").onclick = () => showWelcomeSlide(current + 1);
+      dots.forEach(dot => dot.onclick = () => showWelcomeSlide(Number(dot.dataset.index)));
+
+      // Automatically change every 3.5 seconds.
+      setInterval(() => showWelcomeSlide(current + 1), 3500);
+    }
+
     /* ---------- Gallery Slideshow ---------- */
     const gallery = (data.Gallery || []).filter(x =>
       isPublished(x.Published)
@@ -560,6 +609,39 @@ async function loadWebsite(){
 }
 
 loadWebsite();
+</script>
+
+
+<section class="welcome-photo-section">
+  <div class="welcome-slideshow">
+    <img src="school1.jpg" class="welcome-slide active" alt="বিদ্যালয়ের ছবি ১">
+    <img src="school2.jpg" class="welcome-slide" alt="বিদ্যালয়ের ছবি ২">
+    <img src="school3.jpg" class="welcome-slide" alt="বিদ্যালয়ের ছবি ৩">
+    <img src="school4.jpg" class="welcome-slide" alt="বিদ্যালয়ের ছবি ৪">
+    <button class="welcome-prev" type="button" onclick="changeWelcomeSlide(-1)">‹</button>
+    <button class="welcome-next" type="button" onclick="changeWelcomeSlide(1)">›</button>
+  </div>
+  <div class="welcome-dots">
+    <span class="welcome-dot active" onclick="showWelcomeSlide(0)"></span>
+    <span class="welcome-dot" onclick="showWelcomeSlide(1)"></span>
+    <span class="welcome-dot" onclick="showWelcomeSlide(2)"></span>
+    <span class="welcome-dot" onclick="showWelcomeSlide(3)"></span>
+  </div>
+</section>
+
+
+<script id="welcome-slideshow-script">
+let welcomeCurrent = 0;
+function showWelcomeSlide(index){
+  const slides=document.querySelectorAll(".welcome-slide");
+  const dots=document.querySelectorAll(".welcome-dot");
+  if(!slides.length)return;
+  welcomeCurrent=(index+slides.length)%slides.length;
+  slides.forEach((s,i)=>s.classList.toggle("active",i===welcomeCurrent));
+  dots.forEach((d,i)=>d.classList.toggle("active",i===welcomeCurrent));
+}
+function changeWelcomeSlide(direction){showWelcomeSlide(welcomeCurrent+direction);}
+setInterval(()=>changeWelcomeSlide(1),3500);
 </script>
 
 </body>
