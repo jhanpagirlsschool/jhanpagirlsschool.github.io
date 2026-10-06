@@ -1,0 +1,112 @@
+<!doctype html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ফটো গ্যালারি - ঝাঁপা মাধ্যমিক আদর্শ বালিকা বিদ্যালয়</title><style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Noto Sans Bengali","Nirmala UI","SolaimanLipi",Arial,sans-serif;
+  background:#f5fff8;
+  color:#173b25;
+}
+header{
+  background:linear-gradient(135deg,#087f3b,#0b9b4d);
+  color:white;
+  padding:18px 12px;
+  text-align:center;
+  border-bottom:6px solid #d71920;
+}
+.logo{
+  width:105px;height:105px;object-fit:contain;
+  background:white;border-radius:50%;padding:5px;
+  display:block;margin:0 auto 10px;
+}
+header h1{margin:5px 0;font-size:clamp(22px,5vw,36px)}
+header p{margin:5px 0;font-size:16px}
+nav{
+  background:#d71920;
+  display:flex;flex-wrap:wrap;justify-content:center;
+  position:sticky;top:0;z-index:20;
+}
+nav a{
+  color:white;text-decoration:none;padding:12px 15px;
+  font-weight:bold;font-size:15px;
+}
+nav a:hover{background:#a80f16}
+.container{max-width:1100px;margin:auto;padding:18px}
+.hero{
+  background:white;border-radius:16px;padding:28px 18px;
+  text-align:center;margin-bottom:20px;
+  box-shadow:0 4px 18px #00000012;
+}
+.hero h2{color:#087f3b;margin:0 0 8px}
+.hero p{line-height:1.8}
+.section{
+  background:white;border-radius:15px;padding:20px;margin:18px 0;
+  box-shadow:0 4px 18px #00000010;
+}
+.section h2{
+  color:#087f3b;border-left:5px solid #d71920;
+  padding-left:10px;margin-top:0;
+}
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.card{
+  border:1px solid #dcefe2;border-radius:12px;
+  overflow:hidden;background:#fbfffc;
+}
+.card img{
+  width:100%;height:220px;object-fit:cover;display:block;
+  background:#e9f5ec;
+}
+.card-body{padding:13px}
+.card h3{margin:0 0 7px;color:#087f3b}
+.card p{margin:5px 0;line-height:1.6}
+.notice{
+  border-left:4px solid #d71920;
+  background:#fff8f8;padding:13px;margin:10px 0;border-radius:8px;
+}
+.notice h3{margin:0 0 5px;color:#a80f16}
+.info-table{width:100%;border-collapse:collapse}
+.info-table td{padding:10px;border-bottom:1px solid #e6eee8;vertical-align:top}
+.info-table td:first-child{font-weight:bold;width:35%;color:#087f3b}
+.gallery-img{height:240px!important}
+.empty{
+  text-align:center;padding:20px;color:#777;
+  background:#f7f7f7;border-radius:10px;
+}
+#welcomePhoto{}
+.welcome-photo{width:100%;max-width:900px;height:360px;object-fit:cover;border-radius:14px;margin-top:18px;box-shadow:0 4px 18px #00000018}
+.slideshow{position:relative;max-width:950px;margin:auto;overflow:hidden;border-radius:15px;background:#edf7ef}
+.slide{display:none;position:relative}
+.slide.active{display:block}
+.slide img{width:100%;height:460px;object-fit:cover;display:block}
+.slide-caption{position:absolute;left:0;right:0;bottom:0;background:#0000009c;color:#fff;padding:12px 16px}
+.slide-caption h3{margin:0 0 4px;font-size:18px}
+.slide-caption p{margin:0}
+.slide-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:#087f3b;color:#fff;font-size:28px;cursor:pointer;z-index:3}
+.slide-btn:hover{background:#d71920}
+.slide-prev{left:12px}.slide-next{right:12px}
+.dots{text-align:center;padding:12px 0 2px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#bbb;margin:0 5px;cursor:pointer}
+.dot.active{background:#d71920}
+.eiin-badge{display:inline-block;margin-top:7px;padding:5px 12px;border-radius:20px;background:#fff;color:#087f3b;font-weight:bold}
+footer{
+  background:#087f3b;color:white;text-align:center;
+  padding:25px 15px;margin-top:30px;line-height:1.8;
+}
+.loading{text-align:center;padding:25px;color:#087f3b;font-weight:bold}
+.error{
+  background:#fff0f0;color:#a40000;padding:15px;border-radius:10px;
+  margin:15px 0;
+}
+@media(max-width:600px){
+  nav a{padding:10px 9px;font-size:13px}
+  .container{padding:10px}
+  .section{padding:15px}
+  .card img{height:200px}
+  .welcome-photo{height:230px}
+  .slide img{height:240px}
+  .slide-btn{width:38px;height:38px;font-size:22px}
+}
+
+.page-header{background:#fff;border-radius:15px;padding:22px;text-align:center;margin:18px 0;box-shadow:0 4px 18px #00000010}.page-header h2{color:#087f3b;margin:0}.back-home{display:inline-block;margin-top:12px;background:#087f3b;color:#fff;text-decoration:none;padding:9px 16px;border-radius:8px}.back-home:hover{background:#d71920}.page-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}.pdf-btn{display:inline-block;background:#d71920;color:#fff;text-decoration:none;padding:8px 12px;border-radius:7px;font-weight:bold}.pdf-btn:hover{background:#a80f16}.notice-date{color:#666;font-size:14px}.</style></head><body><header><img class="logo" src="logo.png" alt="বিদ্যালয়ের লোগো" onerror="this.style.display='none'"><h1 id="schoolName">ঝাঁপা মাধ্যমিক আদর্শ বালিকা বিদ্যালয়</h1><p id="schoolAddress">পোস্ট - ঝাঁপা, উপজেলা - মনিরামপুর, জেলা - যশোর</p><p id="established">স্থাপিত: ১৯৯৪ খ্রি.</p><div id="eiin" class="eiin-badge">EIIN: ১১৬২১২</div></header><nav><a href="index.html">হোম</a><a href="index.html#about">বিদ্যালয় সম্পর্কে</a><a href="index.html#academic">শিক্ষাব্যবস্থা</a><a href="notices.html">নোটিশ</a><a href="teachers.html">শিক্ষক ও কর্মচারী</a><a href="index.html#achievements">অর্জন</a><a href="gallery.html">ফটো গ্যালারি</a><a href="index.html#contact">যোগাযোগ</a></nav><main class="container"><section class="page-header"><h2>ফটো গ্যালারি</h2><p>Google Sheet-এ প্রকাশিত সব ছবি এখানে স্বয়ংক্রিয়ভাবে প্রদর্শিত হবে।</p><a class="back-home" href="index.html">← হোমে ফিরে যান</a></section><section class="section"><div class="slideshow" id="gallerySlider"><div id="gallerySlides">লোড হচ্ছে...</div><button class="slide-btn slide-prev" id="prev">‹</button><button class="slide-btn slide-next" id="next">›</button></div><div class="dots" id="galleryDots"></div></section></main><footer><div id="footerName">ঝাঁপা মাধ্যমিক আদর্শ বালিকা বিদ্যালয়</div><div>পোস্ট - ঝাঁপা, উপজেলা - মনিরামপুর, জেলা - যশোর</div><div>ফোন: ০১৩০৯১১৬২১২ | ই-মেইল: prosantapaul61@gmail.com</div><div>© <span id="year"></span> সর্বস্বত্ব সংরক্ষিত</div></footer><script>const API_URL='https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnSJSTGntHo05Bp3KhpCnD-EaNAC-nEOWEFRzufBOor4MadQN3sPGZYUB8QFuL2eY4G41oxJYtbHPJQGPgMI-uFy5b727VXKzNlemZg_UsAE2ahl7QKujQex-yNy5yhWRDdSKHvhXybvdrhmoM1NpQMu6jcOCNVcLVcAnC5Y24ULZuYyJba8XLKjiOK38KxhInjX73DJU3Li0622elQtTXnVQ2XldX7EEaQqFL1urY-6yOKodczKgPChrSqagACHxoDhm9gpDrZnFSwWCMRJif-UbOFkUA&lib=Mhmjst5gJJwHWv3dJdB7aQ736PXFeVImW';function esc(v){return String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;')}function pub(v){if(v===true||v===1)return true;return ['true','yes','y','1','হ্যাঁ','হ্যা','প্রকাশিত','published'].includes(String(v??'').trim().toLowerCase())}function img(u){u=String(u??'').trim();let m=u.match(/\/file\/d\/([A-Za-z0-9_-]+)/)||u.match(/[?&]id=([A-Za-z0-9_-]+)/)||u.match(/\/d\/([A-Za-z0-9_-]+)/);return m?'https://drive.google.com/thumbnail?id='+encodeURIComponent(m[1])+'&sz=w1200':u}function info(d,f){let r=(d.School_Info||[]).find(x=>String(x.Field||'').trim().toLowerCase()===f.toLowerCase());return r?String(r.Value||'').trim():''}async function getData(){let r=await fetch(API_URL+(API_URL.includes('?')?'&':'?')+'t='+Date.now());if(!r.ok)throw Error('API');return r.json()}function setup(d){let n=info(d,'School Name')||'ঝাঁপা মাধ্যমিক আদর্শ বালিকা বিদ্যালয়';document.getElementById('schoolName').textContent=n;document.getElementById('footerName').textContent=n;let a=[info(d,'Post'),info(d,'Upazila'),info(d,'District')].filter(Boolean);if(a.length)document.getElementById('schoolAddress').textContent=a.join(', ');let e=info(d,'Established');if(e)document.getElementById('established').textContent='স্থাপিত: '+e;document.getElementById('eiin').textContent='EIIN: '+(info(d,'EIIN')||'১১৬২১২');document.getElementById('year').textContent=new Date().getFullYear()}</script><script>getData().then(d=>{setup(d);let a=(d.Gallery||[]).filter(x=>pub(x.Published)).map(x=>({...x,p:img(x['Image URL'])})).filter(x=>x.p);let box=document.getElementById('gallerySlides'),dots=document.getElementById('galleryDots');if(!a.length){box.innerHTML='<div class="empty">গ্যালারিতে এখনো কোনো ছবি প্রকাশ করা হয়নি।</div>';document.getElementById('prev').style.display=document.getElementById('next').style.display='none';return}box.innerHTML=a.map((x,i)=>`<div class="slide ${i?'':'active'}"><img src="${esc(x.p)}" alt="${esc(x.Title||'বিদ্যালয়ের ছবি')}" onerror="this.style.display='none'"><div class="slide-caption"><h3>${esc(x.Title||'')}</h3><p>${esc(x.Description||'')}</p></div></div>`).join('');dots.innerHTML=a.map((_,i)=>`<span class="dot ${i?'':'active'}" data-i="${i}"></span>`).join('');let s=[...box.querySelectorAll('.slide')],ds=[...dots.querySelectorAll('.dot')],c=0;function show(i){c=(i+s.length)%s.length;s.forEach((x,j)=>x.classList.toggle('active',j===c));ds.forEach((x,j)=>x.classList.toggle('active',j===c))}document.getElementById('prev').onclick=()=>show(c-1);document.getElementById('next').onclick=()=>show(c+1);ds.forEach(x=>x.onclick=()=>show(+x.dataset.i));setInterval(()=>show(c+1),3500)}).catch(()=>document.getElementById('gallerySlides').innerHTML='<div class="error">গ্যালারি লোড করা যাচ্ছে না।</div>');</script></body></html>
