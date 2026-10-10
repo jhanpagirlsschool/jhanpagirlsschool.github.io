@@ -1,0 +1,208 @@
+<!doctype html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ঝাঁপা মাধ্যমিক আদর্শ বালিকা বিদ্যালয়ের ক্যাম্পাস ও কার্যক্রমের ছবির গ্যালারি।">
+<meta name="theme-color" content="#087f3b"><title>ফটো গ্যালারি - ঝাঁপা মাধ্যমিক আদর্শ বালিকা বিদ্যালয়</title><style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Noto Sans Bengali","Nirmala UI","SolaimanLipi",Arial,sans-serif;
+  background:#f5fff8;
+  color:#173b25;
+}
+header{
+  background:linear-gradient(135deg,#087f3b,#0b9b4d);
+  color:white;
+  padding:18px 12px;
+  text-align:center;
+  border-bottom:6px solid #d71920;
+}
+.logo{
+  width:105px;height:105px;object-fit:contain;
+  background:white;border-radius:50%;padding:5px;
+  display:block;margin:0 auto 10px;
+}
+header h1{margin:5px 0;font-size:clamp(22px,5vw,36px)}
+header p{margin:5px 0;font-size:16px}
+nav{
+  background:#d71920;
+  display:flex;flex-wrap:wrap;justify-content:center;
+  position:sticky;top:0;z-index:20;
+}
+nav a{
+  color:white;text-decoration:none;padding:12px 15px;
+  font-weight:bold;font-size:15px;
+}
+nav a:hover{background:#a80f16}
+.container{max-width:1100px;margin:auto;padding:18px}
+.hero{
+  background:white;border-radius:16px;padding:28px 18px;
+  text-align:center;margin-bottom:20px;
+  box-shadow:0 4px 18px #00000012;
+}
+.hero h2{color:#087f3b;margin:0 0 8px}
+.hero p{line-height:1.8}
+.section{
+  background:white;border-radius:15px;padding:20px;margin:18px 0;
+  box-shadow:0 4px 18px #00000010;
+}
+.section h2{
+  color:#087f3b;border-left:5px solid #d71920;
+  padding-left:10px;margin-top:0;
+}
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+.card{
+  border:1px solid #dcefe2;border-radius:12px;
+  overflow:hidden;background:#fbfffc;
+}
+.card img{
+  width:100%;height:220px;object-fit:cover;display:block;
+  background:#e9f5ec;
+}
+.card-body{padding:13px}
+.card h3{margin:0 0 7px;color:#087f3b}
+.card p{margin:5px 0;line-height:1.6}
+.notice{
+  border-left:4px solid #d71920;
+  background:#fff8f8;padding:13px;margin:10px 0;border-radius:8px;
+}
+.notice h3{margin:0 0 5px;color:#a80f16}
+.info-table{width:100%;border-collapse:collapse}
+.info-table td{padding:10px;border-bottom:1px solid #e6eee8;vertical-align:top}
+.info-table td:first-child{font-weight:bold;width:35%;color:#087f3b}
+.gallery-img{height:240px!important}
+.empty{
+  text-align:center;padding:20px;color:#777;
+  background:#f7f7f7;border-radius:10px;
+}
+#welcomePhoto{}
+.welcome-photo{width:100%;max-width:900px;height:360px;object-fit:cover;border-radius:14px;margin-top:18px;box-shadow:0 4px 18px #00000018}
+.slideshow{position:relative;max-width:950px;margin:auto;overflow:hidden;border-radius:15px;background:#edf7ef}
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px}
+.photo-card{margin:0;border:1px solid var(--school-border);border-radius:15px;overflow:hidden;background:#fff;box-shadow:0 5px 18px rgba(10,70,35,.06);cursor:zoom-in;transition:transform .18s ease,box-shadow .18s ease}
+.photo-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(10,70,35,.13)}
+.photo-card img{width:100%;height:220px;object-fit:cover;display:block;background:#e9f5ec}
+.photo-card figcaption{padding:12px 14px}
+.photo-card h3{font-size:17px;color:var(--school-green-dark);margin:0 0 5px;line-height:1.45}
+.photo-card p{margin:0;color:#53665a;font-size:14px;line-height:1.6}
+.lightbox{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:18px}
+.lightbox.open{display:flex}
+.lightbox-inner{position:relative;width:min(100%,1000px);text-align:center;color:#fff}
+.lightbox-image{max-width:100%;max-height:78vh;object-fit:contain;border-radius:10px}
+.lightbox-caption{margin:10px auto 0;max-width:850px;line-height:1.6}
+.lightbox-close{position:absolute;top:-14px;right:-4px;width:44px;height:44px;border:0;border-radius:50%;background:var(--school-red);color:#fff;font-size:28px;cursor:pointer}
+.lightbox-nav{position:absolute;top:42%;width:44px;height:44px;border:0;border-radius:50%;background:var(--school-green);color:#fff;font-size:28px;cursor:pointer}
+.lightbox-prev{left:8px}.lightbox-next{right:8px}
+.slide{display:none;position:relative}
+.slide.active{display:block}
+.slide img{width:100%;height:460px;object-fit:cover;display:block}
+.slide-caption{position:absolute;left:0;right:0;bottom:0;background:#0000009c;color:#fff;padding:12px 16px}
+.slide-caption h3{margin:0 0 4px;font-size:18px}
+.slide-caption p{margin:0}
+.slide-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:#087f3b;color:#fff;font-size:28px;cursor:pointer;z-index:3}
+.slide-btn:hover{background:#d71920}
+.slide-prev{left:12px}.slide-next{right:12px}
+.dots{text-align:center;padding:12px 0 2px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#bbb;margin:0 5px;cursor:pointer}
+.dot.active{background:#d71920}
+.eiin-badge{display:inline-block;margin-top:7px;padding:5px 12px;border-radius:20px;background:#fff;color:#087f3b;font-weight:bold}
+footer{
+  background:#087f3b;color:white;text-align:center;
+  padding:25px 15px;margin-top:30px;line-height:1.8;
+}
+.loading{text-align:center;padding:25px;color:#087f3b;font-weight:bold}
+.error{
+  background:#fff0f0;color:#a40000;padding:15px;border-radius:10px;
+  margin:15px 0;
+}
+@media(max-width:600px){
+  nav a{padding:10px 9px;font-size:13px}
+  .container{padding:10px}
+  .section{padding:15px}
+  .card img{height:200px}
+  .welcome-photo{height:230px}
+  .slide img{height:240px}
+  .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .photo-card img{height:145px}
+  .photo-card figcaption{padding:10px}
+  .photo-card h3{font-size:14px}
+  .photo-card p{font-size:12px}
+  .lightbox{padding:10px}
+  .lightbox-image{max-height:72vh}
+  .lightbox-nav{width:38px;height:38px}
+  .slide-btn{width:38px;height:38px;font-size:22px}
+}
+
+.page-header{background:#fff;border-radius:15px;padding:22px;text-align:center;margin:18px 0;box-shadow:0 4px 18px #00000010}.page-header h2{color:#087f3b;margin:0}.back-home{display:inline-block;margin-top:12px;background:#087f3b;color:#fff;text-decoration:none;padding:9px 16px;border-radius:8px}.back-home:hover{background:#d71920}.page-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}.pdf-btn{display:inline-block;background:#d71920;color:#fff;text-decoration:none;padding:8px 12px;border-radius:7px;font-weight:bold}.pdf-btn:hover{background:#a80f16}.notice-date{color:#666;font-size:14px}.
+/* Modern professional refresh — additive styles; existing Google Sheets logic preserved */
+:root{--school-green:#087f3b;--school-green-dark:#075c31;--school-red:#d71920;--school-ink:#173b25;--school-mist:#f3fbf5;--school-border:#dcece1;--school-shadow:0 10px 28px rgba(13,83,44,.08)}
+html{scroll-behavior:smooth;scroll-padding-top:90px;max-width:100%;overflow-x:clip}
+body{background:var(--school-mist);color:var(--school-ink);line-height:1.65;overflow-wrap:anywhere}
+img{max-width:100%}
+header{background:linear-gradient(125deg,#075c31 0%,#087f3b 62%,#129653 100%);padding:22px 14px;border-bottom:5px solid var(--school-red)}
+header h1{font-weight:800;line-height:1.35;letter-spacing:-.2px}
+header p{line-height:1.7;opacity:.96}
+.logo{box-shadow:0 4px 18px rgba(0,0,0,.12)}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;background:var(--school-red);box-shadow:0 5px 16px rgba(80,0,0,.12);padding:3px 6px}
+nav a{border-radius:8px;padding:11px 13px;transition:background .18s ease,color .18s ease;line-height:1.35}
+nav a:hover,nav a:focus-visible{background:#a80f16;color:#fff;outline:2px solid rgba(255,255,255,.65);outline-offset:-2px}
+.container{width:100%;max-width:1120px;margin-inline:auto;padding:clamp(12px,3vw,24px)}
+.section,.hero,.page-header{border:1px solid rgba(8,127,59,.06);border-radius:20px;box-shadow:var(--school-shadow)}
+.section{padding:clamp(17px,3vw,28px);margin:clamp(15px,3vw,24px) 0;background:#fff}
+.section h2{font-weight:800;line-height:1.35;padding-left:12px;border-left:5px solid var(--school-red);margin:0 0 20px;color:var(--school-green-dark)}
+.hero{border-radius:0 0 22px 22px;box-shadow:none}
+.grid,.page-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:18px}
+.card{border:1px solid var(--school-border);border-radius:16px;box-shadow:0 5px 18px rgba(10,70,35,.045);transition:transform .18s ease,box-shadow .18s ease;min-width:0}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(10,70,35,.1)}
+.card img{object-fit:cover;background:#e9f5ec}
+.card-body{padding:16px}
+.card h3,.notice h3{line-height:1.45;overflow-wrap:anywhere}
+.notice{border:1px solid #f3d8d9;border-left:5px solid var(--school-red);border-radius:12px;background:#fffafa;padding:16px;margin:12px 0;overflow-wrap:anywhere}
+.notice h3{color:#a80f16}
+.notice a,.pdf-btn,.back-home{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;border-radius:9px;text-decoration:none;font-weight:700;padding:9px 14px;overflow-wrap:anywhere}
+.notice a{color:var(--school-green-dark);background:#eaf7ee}
+.pdf-btn{background:var(--school-red)}
+.back-home{background:var(--school-green)}
+.empty,.loading{border:1px dashed #cfe4d5;border-radius:12px;background:#f8fcf9;padding:20px;text-align:center}
+.info-table{table-layout:fixed;width:100%;max-width:100%}
+.info-table td{overflow-wrap:anywhere;word-break:break-word;padding:12px 10px}
+.info-table td:first-child{width:34%}
+footer{background:linear-gradient(125deg,#075c31,#087f3b);border-top:5px solid var(--school-red);padding:28px 16px;overflow-wrap:anywhere}
+footer a{color:#fff;text-underline-offset:3px}
+button,a{touch-action:manipulation}
+a:focus-visible,button:focus-visible{outline:3px solid #f6c945;outline-offset:3px}
+.page-header{padding:24px 18px;background:#fff}
+.page-header h2{font-weight:800}
+.slideshow{box-shadow:var(--school-shadow)}
+@media(max-width:640px){
+  header{padding:17px 12px}
+  header h1{font-size:clamp(20px,5.7vw,29px)}
+  header p{font-size:14px}
+  nav{position:sticky;top:0;z-index:50;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;padding:4px}
+  nav a{display:flex;align-items:center;justify-content:center;text-align:center;min-width:0;padding:9px 3px;font-size:12.5px;white-space:normal;overflow-wrap:anywhere}
+  .container{padding:10px}
+  .section{padding:16px;border-radius:16px;margin:14px 0}
+  .section h2{font-size:23px;margin-bottom:16px}
+  .grid,.page-grid{grid-template-columns:minmax(0,1fr);gap:13px}
+  .card img{height:210px}
+  .info-table td{padding:10px 7px;font-size:14px}
+  .info-table td:first-child{width:31%}
+  .hero{width:100%;max-width:100%;margin:0 0 16px;min-height:430px;padding:46px 16px 48px;background-position:center center}
+  .hero h2{font-size:clamp(34px,9vw,42px)}
+  .hero p{font-size:clamp(16px,4.2vw,19px);line-height:1.75}
+  .hero-button{max-width:100%;white-space:normal}
+  .slide img{height:250px}
+  .welcome-photo{height:auto;max-height:320px;object-fit:cover}
+  .notice{padding:13px}
+  footer{padding:24px 14px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+
+/* Quick navigation fix: always show navigation on mobile and desktop */
+.quick-nav{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:stretch!important;gap:4px!important;padding:6px!important;margin:0!important;background:#d71920!important;min-height:54px!important;width:100%!important;visibility:visible!important;opacity:1!important;position:sticky!important;top:0!important;z-index:999!important;}
+.quick-nav a{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;min-height:42px!important;padding:8px 4px!important;margin:0!important;color:#fff!important;background:#d71920!important;text-align:center!important;text-decoration:none!important;font-size:clamp(11px,2.8vw,14px)!important;font-weight:700!important;line-height:1.3!important;white-space:normal!important;overflow-wrap:anywhere!important;border-radius:7px!important;visibility:visible!important;opacity:1!important;}
+.quick-nav a:hover,.quick-nav a:focus-visible{background:#a80f16!important;color:#fff!important;}
+@media(min-width:641px){.quick-nav{display:flex!important;flex-wrap:wrap!important;justify-content:center!important}.quick-nav a{padding:11px 13px!important;font-size:14px!important;}}
+</style></head><body><header><img class="logo" src="logo.png" alt="বিদ্যালয়ের লোগো" onerror="this.style.display='none'"><h1 id="schoolName">ঝাঁপা মাধ্যমিক আদর্শ বালিকা বিদ্যালয়</h1><p id="schoolAddress">পোস্ট - ঝাঁপা, উপজেলা - মনিরামপুর, জেলা - যশোর</p><p id="established">স্থাপিত: ১৯৯৪ খ্রি.</p><div id="eiin" class="eiin-badge">EIIN: ১১৬২১২</div></header><nav class="quick-nav" aria-label="দ্রুত নেভিগেশন"><a href="index.html">হোম</a><a href="index.html#about">বিদ্যালয় সম্পর্কে</a><a href="index.html#academic">শিক্ষাব্যবস্থা</a><a href="notices.html">নোটিশ</a><a href="teachers.html">শিক্ষক ও কর্মচারী</a><a href="index.html#achievements">অর্জন</a><a href="gallery.html">ফটো গ্যালারি</a><a href="index.html#contact">যোগাযোগ</a></nav><main class="container"><section class="page-header"><h2>ফটো গ্যালারি</h2><p>Google Sheet-এ প্রকাশিত সব ছবি এখানে স্বয়ংক্রিয়ভাবে প্রদর্শিত হবে।</p><a class="back-home" href="index.html">← হোমে ফিরে যান</a></section><section class="section"><div class="slideshow" id="gallerySlider"><div id="gallerySlides">লোড হচ্ছে...</div><button class="slide-btn slide-prev" id="prev">‹</button><button class="slide-btn slide-next" id="next">›</button></div><div class="dots" id="galleryDots"></div></section><section class="section" aria-labelledby="allPhotosTitle"><h2 id="allPhotosTitle">সব ছবি</h2><p>যেকোনো ছবিতে চাপ দিলে বড় করে দেখতে পারবে।</p><div id="galleryGrid" class="photo-grid"><div class="loading">ছবি লোড হচ্ছে...</div></div></section></main><div id="photoLightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="ছবি বড় করে দেখা"><div class="lightbox-inner"><button type="button" id="lightboxClose" class="lightbox-close" aria-label="বন্ধ করুন">×</button><button type="button" id="lightboxPrev" class="lightbox-nav lightbox-prev" aria-label="আগের ছবি">‹</button><img id="lightboxImage" class="lightbox-image" alt="বড় ছবি"><div id="lightboxCaption" class="lightbox-caption"></div><button type="button" id="lightboxNext" class="lightbox-nav lightbox-next" aria-label="পরের ছবি">›</button></div></div><footer><div id="footerName">ঝাঁপা মাধ্যমিক আদর্শ বালিকা বিদ্যালয়</div><div>পোস্ট - ঝাঁপা, উপজেলা - মনিরামপুর, জেলা - যশোর</div><div>ফোন: ০১৩০৯১১৬২১২ | ই-মেইল: prosantapaul61@gmail.com</div><div>© <span id="year"></span> সর্বস্বত্ব সংরক্ষিত</div></footer><script>const API_URL='https://script.google.com/macros/s/AKfycbwNRBan5rkFrvmftB5AOrXv8zpzaJR8QIo-ROAOtRAREXANAD-YrJg7XTrYLFC7Kg87/exec';function esc(v){return String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;')}function pub(v){if(v===true||v===1)return true;return ['true','yes','y','1','হ্যাঁ','হ্যা','প্রকাশিত','published'].includes(String(v??'').trim().toLowerCase())}function img(u){u=String(u??'').trim();let m=u.match(/\/file\/d\/([A-Za-z0-9_-]+)/)||u.match(/[?&]id=([A-Za-z0-9_-]+)/)||u.match(/\/d\/([A-Za-z0-9_-]+)/);return m?'https://drive.google.com/thumbnail?id='+encodeURIComponent(m[1])+'&sz=w1200':u}function info(d,f){let r=(d.School_Info||[]).find(x=>String(x.Field||'').trim().toLowerCase()===f.toLowerCase());return r?String(r.Value||'').trim():''}async function getData(){let r=await fetch(API_URL+(API_URL.includes('?')?'&':'?')+'t='+Date.now());if(!r.ok)throw Error('API');return r.json()}function setup(d){let n=info(d,'School Name')||'ঝাঁপা মাধ্যমিক আদর্শ বালিকা বিদ্যালয়';document.getElementById('schoolName').textContent=n;document.getElementById('footerName').textContent=n;let a=[info(d,'Post'),info(d,'Upazila'),info(d,'District')].filter(Boolean);if(a.length)document.getElementById('schoolAddress').textContent=a.join(', ');let e=info(d,'Established');if(e)document.getElementById('established').textContent='স্থাপিত: '+e;document.getElementById('eiin').textContent='EIIN: '+(info(d,'EIIN')||'১১৬২১২');document.getElementById('year').textContent=new Date().getFullYear()}</script><script>getData().then(d=>{setup(d);let a=(d.Gallery||[]).filter(x=>pub(x.Published)).map(x=>({...x,p:img(x['Image URL'])})).filter(x=>x.p);let box=document.getElementById('gallerySlides'),dots=document.getElementById('galleryDots'),grid=document.getElementById('galleryGrid'),prev=document.getElementById('prev'),next=document.getElementById('next');if(!a.length){box.innerHTML='<div class="empty">গ্যালারিতে এখনো কোনো ছবি প্রকাশ করা হয়নি।</div>';grid.innerHTML='<div class="empty">এখনো কোনো ছবি প্রকাশ করা হয়নি।</div>';prev.style.display=next.style.display='none';return}box.innerHTML=a.map((x,i)=>`<div class="slide ${i?'':'active'}"><img src="${esc(x.p)}" alt="${esc(x.Title||'বিদ্যালয়ের ছবি')}" onerror="this.style.display='none'"><div class="slide-caption"><h3>${esc(x.Title||'বিদ্যালয়ের ছবি')}</h3><p>${esc(x.Description||'')}</p></div></div>`).join('');dots.innerHTML=a.map((_,i)=>`<button type="button" class="dot ${i?'':'active'}" data-i="${i}" aria-label="${i+1} নম্বর ছবি"></button>`).join('');grid.innerHTML=a.map((x,i)=>`<figure class="photo-card" tabindex="0" role="button" data-i="${i}" aria-label="${esc(x.Title||'ছবি')} বড় করে দেখুন"><img loading="lazy" src="${esc(x.p)}" alt="${esc(x.Title||'বিদ্যালয়ের ছবি')}" onerror="this.closest('figure').style.display='none'"><figcaption><h3>${esc(x.Title||'বিদ্যালয়ের ছবি')}</h3><p>${esc(x.Description||'')}</p></figcaption></figure>`).join('');let slides=[...box.querySelectorAll('.slide')],ds=[...dots.querySelectorAll('.dot')],c=0,lightIndex=0;function show(i){c=(i+slides.length)%slides.length;slides.forEach((x,j)=>x.classList.toggle('active',j===c));ds.forEach((x,j)=>x.classList.toggle('active',j===c))}prev.onclick=()=>show(c-1);next.onclick=()=>show(c+1);ds.forEach(x=>x.onclick=()=>show(+x.dataset.i));let lb=document.getElementById('photoLightbox'),lbImg=document.getElementById('lightboxImage'),lbCap=document.getElementById('lightboxCaption');function openLight(i){lightIndex=(i+a.length)%a.length;let x=a[lightIndex];lbImg.src=x.p;lbImg.alt=x.Title||'বিদ্যালয়ের ছবি';lbCap.textContent=[x.Title,x.Description].filter(Boolean).join(' — ');lb.classList.add('open');document.body.style.overflow='hidden';document.getElementById('lightboxClose').focus()}function closeLight(){lb.classList.remove('open');document.body.style.overflow=''}function moveLight(n){openLight(lightIndex+n)}grid.querySelectorAll('.photo-card').forEach(el=>{el.addEventListener('click',()=>openLight(+el.dataset.i));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLight(+el.dataset.i)}})});document.getElementById('lightboxClose').onclick=closeLight;document.getElementById('lightboxPrev').onclick=()=>moveLight(-1);document.getElementById('lightboxNext').onclick=()=>moveLight(1);lb.addEventListener('click',e=>{if(e.target===lb)closeLight()});document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLight();if(e.key==='ArrowLeft')moveLight(-1);if(e.key==='ArrowRight')moveLight(1)});setInterval(()=>{if(!lb.classList.contains('open'))show(c+1)},4500)}).catch(()=>{document.getElementById('gallerySlides').innerHTML='<div class="error">গ্যালারি লোড করা যাচ্ছে না।</div>';document.getElementById('galleryGrid').innerHTML='<div class="error">Google Sheets থেকে ছবি আনা যাচ্ছে না। API URL ও প্রকাশের সেটিং পরীক্ষা করো।</div>'});</script></body></html>
